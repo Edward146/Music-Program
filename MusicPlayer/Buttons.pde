@@ -1,3 +1,4 @@
+void buttons() {}
 //Play and Pause Buttons
 //ellipse();
 //triangle();
