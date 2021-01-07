@@ -14,9 +14,9 @@ AudioPlayer song1; //creates "Play List" cariable holding extensions WAV, AIFF, 
 
 void setup() {
   fullScreen();
-  minim = new Minim(this);
-  song1 = minim.loadFile("../Music/Mirror Mind - Bobby Richards.mp3"); //able to pass absolute path, file name, and URL
-  song1.play();
+  //minim = new Minim(this);
+  //song1 = minim.loadFile("../Music/Mirror Mind - Bobby Richards.mp3"); //able to pass absolute path, file name, and URL
+  //song1.play();
 }
 
 void draw() {}//End draw() 
