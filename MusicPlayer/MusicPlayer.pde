@@ -11,6 +11,17 @@ import ddf.minim.ugens.*;
 //Global Variables
 Minim minim; //creats object to access all functions
 AudioPlayer song1; //creates "Play List" cariable holding extensions WAV, AIFF, AU, SND, and MP3
+int loopIntNum = 1;
+float fTriangleX1, fTriangleY1, fTriangleX2, fTriangleY2, fTriangleX3, fTriangleY3;
+float fCircleX, fCircleY;
+float bTriangleX1, bTriangleY1, bTriangleX2, bTriangleY2, bTriangleX3, bTriangleY3;
+float bCircleX, bCircleY;
+float playX1, playY1, playX2, playY2, playX3, playY3;
+float playCircleX, playCircleY, Diameter;
+float pauseX, pauseY, pauseWidth, pauseHeight;
+float pause2X, pause2Y;
+
+
 
 void setup() {
   fullScreen();
@@ -47,4 +58,6 @@ void keyPressed() {
   //
   if (key == 'f' || key == 'F') song1.skip(1000);//Fast Forward 1 second
   if (key == 'r' || key == 'R') song1.skip(-1000);
+  //
+  if (key == 'l' || key =='L' ) song1.loop(loopIntNum); //Loop button
 }//End keyPressed()
