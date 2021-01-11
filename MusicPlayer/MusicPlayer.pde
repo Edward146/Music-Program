@@ -10,8 +10,11 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 Minim minim; //creats object to access all functions
-AudioPlayer song1; //creates "Play List" cariable holding extensions WAV, AIFF, AU, SND, and MP3
+int numberOfSongs = 3;
+AudioPlayer[] song = new AudioPlayer[3]; //creates "Play List" cariable holding extensions WAV, AIFF, AU, SND, and MP3
+AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs];
 int loopIntNum = 1;
+int currentSong = numberOfSongs - numberOfSongs;
 float fTriangleX1, fTriangleY1, fTriangleX2, fTriangleY2, fTriangleX3, fTriangleY3;
 float fCircleX, fCircleY;
 float bTriangleX1, bTriangleY1, bTriangleX2, bTriangleY2, bTriangleX3, bTriangleY3;
@@ -25,32 +28,39 @@ float pause2X, pause2Y;
 void setup() {
   fullScreen();
   minim = new Minim(this);
-  song1 = minim.loadFile("../Music/Mirror Mind - Bobby Richards.mp3"); //able to pass absolute path, file name, and URL
-  songMetaData1 = song1.getMetaData();
+  song[currentSong] = minim.loadFile("../Music/Mirror Mind - Bobby Richards.mp3"); //able to pass absolute path, file name, and URL
+  song[currentSong+=1] = minim.loadFile("../Music/Calvin Harris - josh pan.mp3");
+  song[currentSong+=1] = minim.loadFile("../Music/Muriel - Bobby Richards.mp3");
+  //
+  currentSong = numberOfSongs - numberOfSongs;
+  for (int i=currentSong; i<numberOfSongs; i++) {
+    songMetaData[i] = song[i].getMetaData();
+  }
   //
   println("Start of Console");
   println("Click the Console to Finish Starting this program");
   println("Press keyboard to test: P, etc.");
   //
-  println("File Name; ", songMetaData1.fileName() );
-  println("Song Length (in milliseconds); ", songMetaData1.length() );
-  println("Song Length (in seconds); ", songMetaData1.length()/1000 );
-  println("Song Length (in minutes and seconds); ", songMetaData1.length()/1000/60, "minutes", (songMetaData1.length );
-  println("Song Title: ", songMetaData1.title() );
-  println("Author: ", songMetaDate1.author() );
-  println("Composer: ", songMetaData1.composer() );
-  println("Orchestra: ", songMetaData1.orchestra() );
-  println("Albums: ", songMetaData1.album() );
-  println("Disk: ", songMetaData1.disc() );
-  println("Publisher: ", songMetaData1.publisher() );
-  println("Date Release: ", songMetaData1.date() );
-  println("Copyright: ", songMetaData1.copyright() );
-  println("Comments: ", songMetaData1.comment() );
-  println("Lyrics: ", songMetaData1.lyrics() ;
-  println("Track: ", songMetaData1.track() );
-  println("Genre: ", songMetaData1.genre() );
-  println("Encoded: ", songMetaData1.encoded() );
-  
+  for (int i=currentSong; i<numberOfSongs; i++) {
+    println("File Name; ", songMetaData[i].fileName() );
+    println("Song Length (in milliseconds); ", songMetaData[i].length() );
+    println("Song Length (in seconds); ", songMetaData[i].length()/1000 );
+    println("Song Length (in minutes and seconds); ", songMetaData[i].length()/1000/60, "minutes", (songMetaData1.length );
+    println("Song Title: ", songMetaData[i].title() );
+    println("Author: ", songMetaData[i].author() );
+    println("Composer: ", songMetaData[i].composer() );
+    println("Orchestra: ", songMetaData[i].orchestra() );
+    println("Albums: ", songMetaData[i].album() );
+    println("Disk: ", songMetaData[i].disc() );
+    println("Publisher: ", songMetaData[i].publisher() );
+    println("Date Release: ", songMetaData[i].date() );
+    println("Copyright: ", songMetaData[i].copyright() );
+    println("Comments: ", songMetaData[i].comment() );
+    println("Lyrics: ", songMetaData[i].lyrics() ;
+    println("Track: ", songMetaData[i].track() );
+    println("Genre: ", songMetaData[i].genre() );
+    println("Encoded: ", songMetaData[i].encoded() );
+  }
   //
   buttons();
 }
