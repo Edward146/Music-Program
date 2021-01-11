@@ -22,11 +22,36 @@ float pauseX, pauseY, pauseWidth, pauseHeight;
 float pause2X, pause2Y;
 
 
-
 void setup() {
   fullScreen();
   minim = new Minim(this);
   song1 = minim.loadFile("../Music/Mirror Mind - Bobby Richards.mp3"); //able to pass absolute path, file name, and URL
+  songMetaData1 = song1.getMetaData();
+  //
+  println("Start of Console");
+  println("Click the Console to Finish Starting this program");
+  println("Press keyboard to test: P, etc.");
+  //
+  println("File Name; ", songMetaData1.fileName() );
+  println("Song Length (in milliseconds); ", songMetaData1.length() );
+  println("Song Length (in seconds); ", songMetaData1.length()/1000 );
+  println("Song Length (in minutes and seconds); ", songMetaData1.length()/1000/60, "minutes", (songMetaData1.length );
+  println("Song Title: ", songMetaData1.title() );
+  println("Author: ", songMetaDate1.author() );
+  println("Composer: ", songMetaData1.composer() );
+  println("Orchestra: ", songMetaData1.orchestra() );
+  println("Albums: ", songMetaData1.album() );
+  println("Disk: ", songMetaData1.disc() );
+  println("Publisher: ", songMetaData1.publisher() );
+  println("Date Release: ", songMetaData1.date() );
+  println("Copyright: ", songMetaData1.copyright() );
+  println("Comments: ", songMetaData1.comment() );
+  println("Lyrics: ", songMetaData1.lyrics() ;
+  println("Track: ", songMetaData1.track() );
+  println("Genre: ", songMetaData1.genre() );
+  println("Encoded: ", songMetaData1.encoded() );
+  
+  //
   buttons();
 }
 
