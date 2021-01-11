@@ -68,31 +68,48 @@ void setup() {
 void draw() {}//End draw() 
 
 void keyPressed() {
-  
+  //
   if ( key == 'p' || key == 'P' ) {//Play-Pause Button
-  if ( song1.isPlaying() ) {
-    song1.pause();
-  } else if ( song1.position() == song1.length() ) {//.length() = en
-    song1.rewind();
-    song1.play();
+  if ( song[currentSong].isPlaying() ) {
+    song[currentSong].pause();
+  } else if ( song[currentSong].position() == song[currentSong].length() ) {//.length() = en
+    song[currentSong].rewind();
+    song[currentSong].play();
   } else {
-    song1.play();
+    song[currentSong].play();
   }
   }//End of Play-Pause Button
   //
   if ( key == 's' || key == 'S' ) {//Stop Button
-  if ( song1.isPlaying() ) {//Stop Button
-    song1.pause();
-    song1.rewind();
-  } else if ( song1.position() == song1.length() ) {//.length() = end
-    song1.rewind();
+  if ( song[currentSong].isPlaying() ) {//Stop Button
+    song[currentSong].pause();
+    song[currentSong].rewind();
+  } else if ( song[currentSong].position() == song[currentSong].length() ) {//.length() = end
+    song[currentSong].rewind();
   } else {
-    song1.rewind();
+    song[currentSong].rewind();
   }
   }//End of Stop Button
   //
-  if (key == 'f' || key == 'F') song1.skip(1000);//Fast Forward 1 second
-  if (key == 'r' || key == 'R') song1.skip(-1000);
+  if (key == 'f' || key == 'F') song[currentSong].skip(1000);//Fast Forward 1 second
+  if (key == 'r' || key == 'R') song[currentSong].skip(-1000);//Skip backwards 1 second
   //
-  if (key == 'l' || key =='L' ) song1.loop(loopIntNum); //Loop button
+  if (key == 'l' || key =='L' ) song[currentSong].loop(loopIntNum); //Loop button
+  //
+  //Next Button
+  if ( key == 'n' || key == 'N' ) {
+    if ( song[currentSong].isPLaying() ) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      currentSong++;
+      song[currentSong].play();
+    } else
+    currentSong++;
+  }//End Next Button
+  //
+  //Previous Button
+  if ( key == 'b' || key == 'B' ) {
+  currentSong--;
+  }//End Previous Button 
+  //
 }//End keyPressed()
