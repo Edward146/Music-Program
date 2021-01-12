@@ -23,7 +23,7 @@ float playX1, playY1, playX2, playY2, playX3, playY3;
 float playCircleX, playCircleY, Diameter;
 float pauseX, pauseY, pauseWidth, pauseHeight;
 float pause2X, pause2Y;
-
+color black = #000000;
 
 void setup() {
   fullScreen();
@@ -45,7 +45,7 @@ void setup() {
     println("File Name; ", songMetaData[i].fileName() );
     println("Song Length (in milliseconds); ", songMetaData[i].length() );
     println("Song Length (in seconds); ", songMetaData[i].length()/1000 );
-    println("Song Length (in minutes and seconds); ", songMetaData[i].length()/1000/60, "minutes", (songMetaData1.length );
+    println("Song Length (in minutes and seconds); ", songMetaData[i].length()/1000/60, "minutes", (songMetaData[i].length()/1000)-(songMetaData[i].length()/1000/60*60), "seconds" );
     println("Song Title: ", songMetaData[i].title() );
     println("Author: ", songMetaData[i].author() );
     println("Composer: ", songMetaData[i].composer() );
@@ -56,7 +56,7 @@ void setup() {
     println("Date Release: ", songMetaData[i].date() );
     println("Copyright: ", songMetaData[i].copyright() );
     println("Comments: ", songMetaData[i].comment() );
-    println("Lyrics: ", songMetaData[i].lyrics() ;
+    println("Lyrics: ", songMetaData[i].lyrics() );
     println("Track: ", songMetaData[i].track() );
     println("Genre: ", songMetaData[i].genre() );
     println("Encoded: ", songMetaData[i].encoded() );
@@ -65,9 +65,14 @@ void setup() {
   buttons();
 }
 
-void draw() {}//End draw() 
+void draw() {
+  background(black);
+  text(songMetaData[currentSong].title(), width*1/4, height*0, width*1/2, height*1/10);
+
+}//End draw() 
 
 void keyPressed() {
+  
   //
   if ( key == 'p' || key == 'P' ) {//Play-Pause Button
   if ( song[currentSong].isPlaying() ) {
@@ -98,18 +103,45 @@ void keyPressed() {
   //
   //Next Button
   if ( key == 'n' || key == 'N' ) {
-    if ( song[currentSong].isPLaying() ) {
+    if ( song[currentSong].isPlaying() ) {
       song[currentSong].pause();
       song[currentSong].rewind();
-      currentSong++;
+      if ( currentSong == numberOfSongs - 1) {
+        currentSong = numberOfSongs - numberOfSongs;
+      } else {
+      currentSong+=1;
+      }
       song[currentSong].play();
-    } else
-    currentSong++;
+    } else { 
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs-1 ) {
+        currentSong = numberOfSongs - numberOfSongs;
+    } else {
+    currentSong += 1;
+    }
+    }
   }//End Next Button
   //
+  
   //Previous Button
   if ( key == 'b' || key == 'B' ) {
-  currentSong--;
+  if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs - numberOfSongs) {
+        currentSong = numberOfSongs-1;
+      } else {
+      currentSong--;
+      }
+      song[currentSong].play();
+    } else { 
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs - numberOfSongs ) {
+        currentSong = numberOfSongs-1;
+    } else {
+    currentSong--;
+    }
+    }
   }//End Previous Button 
   //
 }//End keyPressed()
