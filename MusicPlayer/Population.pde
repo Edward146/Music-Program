@@ -15,9 +15,9 @@ bTriangleX3
 bTriangleY3
 bCircleX
 bCircleY
-playX1 = width*45/50;
+playX1 = width*22/50;
 playY1 = height*45/50
-playX2 = width
+playX2 = width*
 playY2 = height
 playX3 = width
 playY3 = height

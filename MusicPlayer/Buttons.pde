@@ -1,4 +1,4 @@
-void buttons() {}
+void buttons() {
 //Play and Pause Buttons
 //ellipse();
 //triangle();
@@ -21,3 +21,4 @@ void buttons() {}
 //triangle();
 //Show Image of Song
 //triangle();
+}
