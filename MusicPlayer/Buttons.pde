@@ -1,9 +1,9 @@
 void buttons() {
 //Play and Pause Buttons
-//ellipse();
+ellipse(playCircleX, playCircleY, Diameter, Diameter);
 triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-//rect();
-//rect();
+//
+
 //
 //Forward and Back Buttons
 //ellipse();
@@ -39,21 +39,25 @@ bTriangleY3
 bCircleX
 bCircleY
 */
-playX1 = width*22/50;
-playY1 = height*45/50;
-playX2 = width*27/50;
-playY2 = height*46/50;
-playX3 = width*22/50;
-playY3 = height*49/50;
-/*
-playCircleX;
-playCircleY = width*;
-Diameter = width*;
-pauseX
-pauseY
-pauseWidth
-pauseHeight
-pause2X
-pause2Y
+playX1 = width*47/100;
+playY1 = height*95/100;
+playX2 = width*49/100;
+playY2 = height*96/100;
+playX3 = width*47/100;
+playY3 = height*97/100;
+//
+playCircleX = width*48/100;
+playCircleY = height*96/100;
+Diameter = width*3/100;
+//
+
+pauseX = width*1/100;
+pauseY = height
+pauseWidth = width
+pauseHeight = height
+pause2X = width
+pause2Y = height
 */
+
+
 }

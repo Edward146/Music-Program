@@ -23,67 +23,10 @@ float playX1, playY1, playX2, playY2, playX3, playY3;
 float playCircleX, playCircleY, Diameter;
 float pauseX, pauseY, pauseWidth, pauseHeight;
 float pause2X, pause2Y;
+float pauseCircleX, pauseCircleY;
 color black = #000000, white = #FFFFFF;
 
 void setup() {
-  //Play and Pause Buttons
-//ellipse();
-triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-//rect();
-//rect();
-//
-//Forward and Back Buttons
-//ellipse();
-//ellipse();
-//rect();
-//triangle();
-//rect();
-//triangle();
-//Repeat Button
-//ellipse(); //make it a perfect circle
-//triangle();
-//triangle();
-//Shuffle Button
-//Show Song List
-//triangle();
-//Show Image of Song
-//triangle();
-/*
-fTriangleX1
-fTriangleY1
-fTriangleX2 
-fTriangleY2 
-fTriangleX3
-fTriangleY3
-fCircleX 
-fCircleY;
-bTriangleX1
-bTriangleY1 
-bTriangleX2
-bTriangleY2
-bTriangleX3 
-bTriangleY3
-bCircleX
-bCircleY
-*/
-fill(white);
-playX1 = width*22/50;
-playY1 = height*45/50;
-playX2 = width*27/50;
-playY2 = height*46/50;
-playX3 = width*22/50;
-playY3 = height*49/50;
-/*
-playCircleX;
-playCircleY = width*;
-Diameter = width*;
-pauseX
-pauseY
-pauseWidth
-pauseHeight
-pause2X
-pause2Y
-*/
   fullScreen();
   minim = new Minim(this);
   song[currentSong] = minim.loadFile("../Music/Mirror Mind - Bobby Richards.mp3"); //able to pass absolute path, file name, and URL
@@ -123,7 +66,7 @@ pause2Y
 }
 
 void draw() {
-  background(black);
+  buttons();
   text(songMetaData[currentSong].title(), width*1/4, height*0, width*1/2, height*1/10);
 
 }//End draw() 
