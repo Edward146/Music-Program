@@ -51,11 +51,11 @@ playCircleY = height*96/100;
 Diameter = width*3/100;
 //
 
-pauseX = width*1/100;
+pauseX = width*53/100;
 pauseY = height
 pauseWidth = width
 pauseHeight = height
-pause2X = width
+pause2X = width*55/100;
 pause2Y = height
 */
 
