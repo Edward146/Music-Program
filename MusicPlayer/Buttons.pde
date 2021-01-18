@@ -8,10 +8,10 @@ rect(pauseX, pauseY, pauseWidth, pauseHeight);
 rect(pause2X, pause2Y, pauseWidth, pauseHeight);
 //
 //Forward and Back Buttons
-//ellipse();
-//ellipse();
+ellipse(fCircleX, fCircleY, Diameter, Diameter);
 //rect();
-//triangle();
+triangle(fTriangleX1, fTriangleY1, fTriangleX2, fTriangleY2, fTriangleX3, fTriangleY3);
+//ellipse();
 //rect();
 //triangle();
 //Repeat Button
@@ -24,14 +24,6 @@ rect(pause2X, pause2Y, pauseWidth, pauseHeight);
 //Show Image of Song
 //triangle();
 /*
-fTriangleX1
-fTriangleY1
-fTriangleX2 
-fTriangleY2 
-fTriangleX3
-fTriangleY3
-fCircleX 
-fCircleY;
 bTriangleX1
 bTriangleY1 
 bTriangleX2
@@ -61,14 +53,20 @@ pause2Y = height*94/100;
 pauseCircleX = width*53/100;
 pauseCircleY = height*96/100;
 //
-fTriangleX1 = width*110/200;
+fTriangleX1 = width*114/200;
 fTriangleY1 = height*95/100;
-fTriangleX2 = width*114/200;
+fTriangleX2 = width*118/200;
 fTriangleY2 = height*96/100;
-fTriangleX3 = width*
-fTriangleY3 - height*
-fCircleX = width*
-fCircleY = height*
+fTriangleX3 = width*114/200;
+fTriangleY3 = height*97/100;
+fCircleX = width*58/100;
+fCircleY = height*96/100;
+fRectX = width*115/200;
+fRectY = height*96/100;
+fRectWidth = width*
+fRectHeight = height*;
+}
+/*
 bTriangleX1 = width*
 bTriangleY1 = height*
 bTriangleX2 = width*
@@ -77,4 +75,4 @@ bTriangleX3 = width*
 bTriangleY3 = height*
 bCircleX = width*
 bCircleY = height*
-}
+*/

@@ -17,6 +17,7 @@ int loopIntNum = 1;
 int currentSong = numberOfSongs - numberOfSongs;
 float fTriangleX1, fTriangleY1, fTriangleX2, fTriangleY2, fTriangleX3, fTriangleY3;
 float fCircleX, fCircleY;
+float fRectX, fRectY, fRectWidth, fRectHeight;
 float bTriangleX1, bTriangleY1, bTriangleX2, bTriangleY2, bTriangleX3, bTriangleY3;
 float bCircleX, bCircleY;
 float playX1, playY1, playX2, playY2, playX3, playY3;
