@@ -9,8 +9,8 @@ rect(pause2X, pause2Y, pauseWidth, pauseHeight);
 //
 //Forward and Back Buttons
 ellipse(fCircleX, fCircleY, Diameter, Diameter);
-//rect();
 triangle(fTriangleX1, fTriangleY1, fTriangleX2, fTriangleY2, fTriangleX3, fTriangleY3);
+rect(fRectX, fRectY, fRectWidth, fRectHeight);
 //ellipse();
 //rect();
 //triangle();
@@ -23,16 +23,6 @@ triangle(fTriangleX1, fTriangleY1, fTriangleX2, fTriangleY2, fTriangleX3, fTrian
 //triangle();
 //Show Image of Song
 //triangle();
-/*
-bTriangleX1
-bTriangleY1 
-bTriangleX2
-bTriangleY2
-bTriangleX3 
-bTriangleY3
-bCircleX
-bCircleY
-*/
 playX1 = width*47/100;
 playY1 = height*95/100;
 playX2 = width*49/100;
@@ -61,18 +51,19 @@ fTriangleX3 = width*114/200;
 fTriangleY3 = height*97/100;
 fCircleX = width*58/100;
 fCircleY = height*96/100;
-fRectX = width*115/200;
-fRectY = height*96/100;
-fRectWidth = width*
-fRectHeight = height*;
+fRectX = width*117/200;
+fRectY = height*95/100;
+fRectWidth = width*1/200;
+fRectHeight = height*2/100;
 }
-/*
-bTriangleX1 = width*
-bTriangleY1 = height*
+
+bTriangleX1 = width*46/100;
+bTriangleY1 = height*95/100;
 bTriangleX2 = width*
 bTriangleY2 = height*
 bTriangleX3 = width*
 bTriangleY3 = height*
+/*
 bCircleX = width*
 bCircleY = height*
 */
