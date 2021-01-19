@@ -20,12 +20,14 @@ float fCircleX, fCircleY;
 float fRectX, fRectY, fRectWidth, fRectHeight;
 float bTriangleX1, bTriangleY1, bTriangleX2, bTriangleY2, bTriangleX3, bTriangleY3;
 float bCircleX, bCircleY;
+float bRectX, bRectY;
 float playX1, playY1, playX2, playY2, playX3, playY3;
 float playCircleX, playCircleY, Diameter;
 float pauseX, pauseY, pauseWidth, pauseHeight;
 float pause2X, pause2Y;
 float pauseCircleX, pauseCircleY;
-color black = #000000, white = #FFFFFF;
+float bottomPanelX, bottomPanelY, bottomPanelWidth, bottomPanelHeight;
+color black = #000000, white = #FFFFFF, red = #F52525;
 
 void setup() {
   fullScreen();
@@ -67,6 +69,7 @@ void setup() {
 }
 
 void draw() {
+  Background();
   buttons();
   text(songMetaData[currentSong].title(), width*1/4, height*0, width*1/2, height*1/10);
 
