@@ -21,11 +21,11 @@ float fRectX, fRectY, fRectWidth, fRectHeight;
 float bTriangleX1, bTriangleY1, bTriangleX2, bTriangleY2, bTriangleX3, bTriangleY3;
 float bCircleX, bCircleY;
 float bRectX, bRectY;
-float playX1, playY1, playX2, playY2, playX3, playY3;
-float playCircleX, playCircleY, Diameter;
+int playX1, playY1, playX2, playY2, playX3, playY3;
+float playBoxX, playBoxY, Diameter, playBoxWidth, playBoxHeight;
 float pauseX, pauseY, pauseWidth, pauseHeight;
 float pause2X, pause2Y;
-float pauseCircleX, pauseCircleY;
+float pauseBoxX, pauseBoxY, pauseBoxWidth, pauseBoxHeight;
 float bottomPanelX, bottomPanelY, bottomPanelWidth, bottomPanelHeight;
 color black = #000000, white = #FFFFFF, red = #F52525;
 
@@ -149,3 +149,13 @@ void keyPressed() {
   }//End Previous Button 
   //
 }//End keyPressed()
+void mousePressed() {
+  //Play Button
+  if (mouseX>playBoxX && mouseX<playBoxX+playBoxWidth && mouseY>playBoxY && mouseY<playBoxY+playBoxHeight) {
+    song[currentSong].play();
+  }
+//Pause Button
+  if (mouseX>pauseBoxX && mouseX<pauseBoxX+pauseBoxWidth && mouseY>pauseBoxY && mouseY<pauseBoxY+pauseBoxHeight) {
+    song[currentSong].pause();
+}
+  }
