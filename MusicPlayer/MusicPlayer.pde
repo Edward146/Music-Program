@@ -26,7 +26,12 @@ float playBoxX, playBoxY, Diameter, playBoxWidth, playBoxHeight;
 float pauseX, pauseY, pauseWidth, pauseHeight;
 float pause2X, pause2Y;
 float pauseBoxX, pauseBoxY, pauseBoxWidth, pauseBoxHeight;
-float nextSongX1, nextSongY1, nextSongX2, nextSongY2, nextSongX3, nextSongY3; 
+float nextSongX1, nextSongY1, nextSongX2, nextSongY2, nextSongX3, nextSongY3;
+float nextSong2X1, nextSong2Y1, nextSong2X2, nextSong2Y2, nextSong2X3, nextSong2Y3;
+float nextSongBoxX, nextSongBoxY, nextSongBoxWidth, nextSongBoxHeight;
+float backSongX1, backSongY1, backSongX2, backSongY2, backSongX3, backSongY3;
+float backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSong2Y3;
+float backSongBoxX, backSongBoxY, backSongBoxWidth, backSongBoxHeight;
 float bottomPanelX, bottomPanelY, bottomPanelWidth, bottomPanelHeight;
 color black = #000000, white = #FFFFFF, red = #F52525;
 
@@ -169,5 +174,5 @@ void mousePressed() {
   if (mouseX>bBoxX && mouseX<bBoxX+bBoxWidth && mouseY>bBoxY && mouseY<bBoxY+bBoxHeight) {
     song[currentSong].skip(-1000);
   }
-//Back Button
+//Next Song Button
   }
