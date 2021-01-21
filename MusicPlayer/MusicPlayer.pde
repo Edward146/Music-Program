@@ -16,16 +16,17 @@ AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs];
 int loopIntNum = 1;
 int currentSong = numberOfSongs - numberOfSongs;
 float fTriangleX1, fTriangleY1, fTriangleX2, fTriangleY2, fTriangleX3, fTriangleY3;
-float fCircleX, fCircleY;
+float fBoxX, fBoxY, fBoxWidth, fBoxHeight;
 float fRectX, fRectY, fRectWidth, fRectHeight;
 float bTriangleX1, bTriangleY1, bTriangleX2, bTriangleY2, bTriangleX3, bTriangleY3;
-float bCircleX, bCircleY;
+float bBoxX, bBoxY, bBoxWidth, bBoxHeight;
 float bRectX, bRectY;
 int playX1, playY1, playX2, playY2, playX3, playY3;
 float playBoxX, playBoxY, Diameter, playBoxWidth, playBoxHeight;
 float pauseX, pauseY, pauseWidth, pauseHeight;
 float pause2X, pause2Y;
 float pauseBoxX, pauseBoxY, pauseBoxWidth, pauseBoxHeight;
+float nextSongX1, nextSongY1, nextSongX2, nextSongY2, nextSongX3, nextSongY3; 
 float bottomPanelX, bottomPanelY, bottomPanelWidth, bottomPanelHeight;
 color black = #000000, white = #FFFFFF, red = #F52525;
 
@@ -158,4 +159,15 @@ void mousePressed() {
   if (mouseX>pauseBoxX && mouseX<pauseBoxX+pauseBoxWidth && mouseY>pauseBoxY && mouseY<pauseBoxY+pauseBoxHeight) {
     song[currentSong].pause();
 }
+
+//Forward Button
+  if (mouseX>fBoxX && mouseX<fBoxX+fBoxWidth && mouseY>fBoxY && mouseY<fBoxY+fBoxWidth) {
+    song[currentSong].skip(1000);
+  }
+  
+//Back Button
+  if (mouseX>bBoxX && mouseX<bBoxX+bBoxWidth && mouseY>bBoxY && mouseY<bBoxY+bBoxHeight) {
+    song[currentSong].skip(-1000);
+  }
+//Back Button
   }
