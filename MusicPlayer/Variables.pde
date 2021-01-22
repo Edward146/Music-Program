@@ -76,22 +76,24 @@ nextSongBoxWidth = width*4/100;
 nextSongBoxHeight = height*4/100;
 //
 //Before Song Button
-backSongX1 
-backSongY1 
-backSongX2 
-backSongY2 
-backSongX3
-backSongY3;
- backSong2X1
- backSong2Y1
- backSong2X2
- backSong2Y2
- backSong2X3
- backSong2Y3;
- backSongBoxX
- backSongBoxY
- backSongBoxWidth
- backSongBoxHeight;
+backSongX1 = width*76/200;
+backSongY1 = height*95/100;
+backSongX2 = width*74/200;
+backSongY2 = height*96/100;
+backSongX3 = width*76/200;
+backSongY3 = height*97/100;
+
+backSong2X1 = width*78/200;
+backSong2Y1 = height*95/100;
+backSong2X2 = width*76/200;
+backSong2Y2 = height*96/100;
+backSong2X3 = width*78/200;
+backSong2Y3 = height*97/100;
+
+backSongBoxX = width*72/200;
+backSongBoxY = height*94/100;
+backSongBoxWidth = width*4/100;
+backSongBoxHeight = height*4/100;
 //
 //Play and Pause Buttons
 fill(white);
@@ -123,6 +125,13 @@ rect(nextSongBoxX, nextSongBoxY, nextSongBoxWidth, nextSongBoxHeight);
 fill(red);
 triangle(nextSongX1, nextSongY1, nextSongX2, nextSongY2, nextSongX3, nextSongY3);
 triangle(nextSong2X1, nextSong2Y1, nextSong2X2, nextSong2Y2, nextSong2X3, nextSong2Y3);
+//
+//Before Song Button
+fill(white);
+rect(backSongBoxX, backSongBoxY, backSongBoxWidth, backSongBoxHeight);
+fill(red);
+triangle(backSongX1, backSongY1, backSongX2, backSongY2, backSongX3, backSongY3);
+triangle(backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSong2Y3);
 //Repeat Button
 //ellipse(); //make it a perfect circle
 //triangle();

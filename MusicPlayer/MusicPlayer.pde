@@ -160,6 +160,7 @@ void mousePressed() {
   if (mouseX>playBoxX && mouseX<playBoxX+playBoxWidth && mouseY>playBoxY && mouseY<playBoxY+playBoxHeight) {
     song[currentSong].play();
   }
+  
 //Pause Button
   if (mouseX>pauseBoxX && mouseX<pauseBoxX+pauseBoxWidth && mouseY>pauseBoxY && mouseY<pauseBoxY+pauseBoxHeight) {
     song[currentSong].pause();
@@ -174,5 +175,45 @@ void mousePressed() {
   if (mouseX>bBoxX && mouseX<bBoxX+bBoxWidth && mouseY>bBoxY && mouseY<bBoxY+bBoxHeight) {
     song[currentSong].skip(-1000);
   }
+  
 //Next Song Button
+  if (mouseX>nextSongBoxX && mouseX<nextSongBoxX+nextSongBoxWidth && mouseY>nextSongBoxY && mouseY<nextSongBoxY+nextSongBoxHeight) {
+     if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs - 1) {
+        currentSong = numberOfSongs - numberOfSongs;
+      } else {
+      currentSong+=1;
+      }
+      song[currentSong].play();
+    } else { 
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs-1 ) {
+        currentSong = numberOfSongs - numberOfSongs;
+    } else {
+    currentSong += 1;
+    }
+    }
   }
+//Before Song Button
+  if (mouseX>backSongBoxX && mouseX<backSongBoxX+backSongBoxWidth && mouseY>backSongBoxY && mouseY<backSongBoxY+backSongBoxHeight) {
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs - numberOfSongs) {
+        currentSong = numberOfSongs-1;
+      } else {
+      currentSong--;
+      }
+      song[currentSong].play();
+    } else { 
+      song[currentSong].rewind();
+      if ( currentSong == numberOfSongs - numberOfSongs ) {
+        currentSong = numberOfSongs-1;
+    } else {
+    currentSong--;
+    }
+    }
+  }
+}
