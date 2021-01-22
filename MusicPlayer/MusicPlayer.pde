@@ -10,8 +10,9 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 Minim minim; //creats object to access all functions
-int numberOfSongs = 3;
-AudioPlayer[] song = new AudioPlayer[3]; //creates "Play List" cariable holding extensions WAV, AIFF, AU, SND, and MP3
+//Change line 14 and 15 whenever you add a song.
+int numberOfSongs = 4;
+AudioPlayer[] song = new AudioPlayer[4]; //creates "Play List" cariable holding extensions WAV, AIFF, AU, SND, and MP3
 AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs];
 int loopIntNum = 1;
 int currentSong = numberOfSongs - numberOfSongs;
@@ -41,6 +42,7 @@ void setup() {
   song[currentSong] = minim.loadFile("../Music/Mirror Mind - Bobby Richards.mp3"); //able to pass absolute path, file name, and URL
   song[currentSong+=1] = minim.loadFile("../Music/Calvin Harris - josh pan.mp3");
   song[currentSong+=1] = minim.loadFile("../Music/Muriel - Bobby Richards.mp3");
+  song[currentSong+=1] = minim.loadFile("../Music/Beyond - Patrick Patrikios.mp3");
   //
   currentSong = numberOfSongs - numberOfSongs;
   for (int i=currentSong; i<numberOfSongs; i++) {
@@ -216,4 +218,5 @@ void mousePressed() {
     }
     }
   }
+
 }
