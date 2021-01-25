@@ -34,6 +34,9 @@ float backSongX1, backSongY1, backSongX2, backSongY2, backSongX3, backSongY3;
 float backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSong2Y3;
 float backSongBoxX, backSongBoxY, backSongBoxWidth, backSongBoxHeight;
 float bottomPanelX, bottomPanelY, bottomPanelWidth, bottomPanelHeight;
+//Progress Bar
+float barStartX, barEndX, barY, barWidth, barHeight;
+float 
 color black = #000000, white = #FFFFFF, red = #F52525;
 
 void setup() {
@@ -72,6 +75,8 @@ void setup() {
     println("Track: ", songMetaData[i].track() );
     println("Genre: ", songMetaData[i].genre() );
     println("Encoded: ", songMetaData[i].encoded() );
+    
+    frameRate(60);
   }
   //
 }
@@ -220,3 +225,5 @@ void mousePressed() {
   }
 
 }
+
+void 
