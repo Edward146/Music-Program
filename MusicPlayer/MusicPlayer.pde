@@ -35,8 +35,9 @@ float backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSong2
 float backSongBoxX, backSongBoxY, backSongBoxWidth, backSongBoxHeight;
 float bottomPanelX, bottomPanelY, bottomPanelWidth, bottomPanelHeight;
 //Progress Bar
-float barStartX, barEndX, barY, barWidth, barHeight;
-float 
+float barStartX, barEndX, barY;
+int position;
+int TimeStamp = 0;
 color black = #000000, white = #FFFFFF, red = #F52525;
 
 void setup() {
@@ -226,4 +227,9 @@ void mousePressed() {
 
 }
 
-void 
+void mouseReleased() {
+  if (mouseX >= barStartX && mouseX <= barEndX && mouseY >= barY && mouseY <= barY+5) {
+    position = int( map(mouseX, barStartX, barEndX, 0, song[currentSong].length() ) );
+    song[currentSong].cue(position);
+  }
+}

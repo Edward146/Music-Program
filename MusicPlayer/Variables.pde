@@ -95,6 +95,9 @@ backSongBoxY = height*94/100;
 backSongBoxWidth = width*4/100;
 backSongBoxHeight = height*4/100;
 //
+barStartX = width*5/20;
+barEndX = width*15/20;
+barY = height*1/20;
 //Play and Pause Buttons
 fill(white);
 rect(playBoxX, playBoxY, playBoxWidth, playBoxHeight);
@@ -143,4 +146,9 @@ triangle(backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSo
 //triangle();
 //
 //
+fill(red);
+line(barStartX, barY, barEndX, barY ); //where the progress bar should end
+  stroke(0);
+  TimeStamp = int( map(song[currentSong].position(), 0, song[currentSong].length(), barStartX, barEndX));
+  line(barStartX, barY, TimeStamp, barY );
 }
