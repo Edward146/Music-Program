@@ -146,7 +146,7 @@ triangle(backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSo
 //triangle();
 //
 //
-fill(red);
+stroke(red);
 line(barStartX, barY, barEndX, barY ); //where the progress bar should end
   stroke(0);
   TimeStamp = int( map(song[currentSong].position(), 0, song[currentSong].length(), barStartX, barEndX));
