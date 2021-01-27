@@ -33,6 +33,7 @@ float nextSongBoxX, nextSongBoxY, nextSongBoxWidth, nextSongBoxHeight;
 float backSongX1, backSongY1, backSongX2, backSongY2, backSongX3, backSongY3;
 float backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSong2Y3;
 float backSongBoxX, backSongBoxY, backSongBoxWidth, backSongBoxHeight;
+float quitX, quitY, quitWidth, quitHeight;
 float bottomPanelX, bottomPanelY, bottomPanelWidth, bottomPanelHeight;
 //Progress Bar
 float barStartX, barEndX, barY;
@@ -85,6 +86,7 @@ void setup() {
 void draw() {
   Background();
   buttons();
+  Drawings();
   text(songMetaData[currentSong].title(), width*1/4, height*0, width*1/2, height*1/10);
 
 }//End draw() 
@@ -224,7 +226,9 @@ void mousePressed() {
     }
     }
   }
-
+  if (mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitWidth) {
+   exit (); 
+  }
 }
 
 void mouseReleased() {
