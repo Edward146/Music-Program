@@ -51,11 +51,19 @@ float loop2X1, loop2Y1, loop2X2, loop2Y2, loop2X3, loop2Y3;
 float barStartX, barEndX, barY;
 int position;
 int TimeStamp = 0;
+//Loop button
+int x, y;
+int loop_int_num = 1; 
+boolean loop_all;
+boolean selected;
+boolean loop_one;
+boolean loop_selected;
+float colour;
 //Backround image
 PImage pic;
 float imageStartWidth, imageStartHeight, imageWidth, imageHeight;
 float imageWidthRatio, imageHeightRatio;
-color black = #000000, white = #FFFFFF, red = #F52525;
+color black = #000000, white = #FFFFFF, red = #F52525, grey = #A0A0A0;
 
 void setup() {
   fullScreen();
@@ -256,6 +264,39 @@ void mousePressed() {
   if (mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitWidth) {
    exit (); 
   }
+  
+  /*
+  x = mouseX;
+  y = mouseY;
+  if (mouseX > loopBoxX && mouseX < loopBoxX + loopBoxWidth && mouseY > loopBoxY && mouseY < loopBoxY + loopBoxHeight) {
+    colour = get(x, y);
+    if (colour == black || colour == grey) {
+      loop_all = false;
+      selected = false;
+      if (loop_one == false) {
+        loop_one = true;
+      }
+      if (loop_selected == true) {
+        loop_one = false;
+        loop_selected = false;
+      }
+    }
+    colour = get(x, y);
+    if (colour == white) {
+      if (mouseX > loopBoxX && mouseX < loopBoxX + loopBoxWidth && mouseY > loopBoxY && mouseY < loopBoxY + loopBoxHeight) {
+        loop_all = false;
+        selected = false;
+        if (loop_one == false) {
+          loop_one = true;
+        }
+        if (loop_selected == true) {
+          loop_one = true;
+          loop_selected = false;
+        }
+      }
+    }
+  }
+*/
 }
 
 void mouseReleased() {
