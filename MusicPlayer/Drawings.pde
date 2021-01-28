@@ -38,14 +38,13 @@ triangle(backSongX1, backSongY1, backSongX2, backSongY2, backSongX3, backSongY3)
 triangle(backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSong2Y3);
 //
 rect(quitX, quitY, quitWidth, quitHeight);
-//Repeat Button
-//ellipse(); //make it a perfect circle
-//triangle();
-//triangle();
-//triangle();
-//Show Image of Song
-//triangle();
-//
+//Loop Button
+fill(white);
+rect(loopBoxX, loopBoxY, loopBoxWidth, loopBoxHeight);
+ellipse(loopX, loopY, loopDiameter, loopDiameter); //make it a perfect circle
+fill(red);
+triangle(loopX1, loopY1, loopX2, loopY2, loopX3, loopY3);
+triangle(loop2X1, loop2Y1, loop2X2, loop2Y2, loop2X3, loop2Y3);
 //
 stroke(red);
 line(barStartX, barY, barEndX, barY ); //where the progress bar should end

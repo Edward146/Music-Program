@@ -82,25 +82,47 @@ backSongX2 = width*74/200;
 backSongY2 = height*96/100;
 backSongX3 = width*76/200;
 backSongY3 = height*97/100;
-
 backSong2X1 = width*78/200;
 backSong2Y1 = height*95/100;
 backSong2X2 = width*76/200;
 backSong2Y2 = height*96/100;
 backSong2X3 = width*78/200;
 backSong2Y3 = height*97/100;
-
 backSongBoxX = width*72/200;
 backSongBoxY = height*94/100;
 backSongBoxWidth = width*4/100;
 backSongBoxHeight = height*4/100;
 //
+//Progress bar
 barStartX = width*5/20;
 barEndX = width*15/20;
 barY = height*1/20;
 //
+//Exit program
 quitX = width*94/100;
 quitY = height*1/100;
 quitWidth = width*5/100;
 quitHeight = height*5/100;
+//
+//Loop button
+loopX = width*66/200;
+loopY = height*96/100;
+loopDiameter = width*3/200;
+loopBoxX = width*62/200;
+loopBoxY = height*94/100;
+loopBoxWidth = width*4/100;
+loopBoxHeight = height*4/100;
+loopX1 = width*135/400;
+loopY1 = height*193/200;
+loopX2 = width*134/400;
+loopY2 = height*192/200;
+loopX3 = width*136/400;
+loopY3 = height*192/200; 
+
+loop2X1 = width*129/400;
+loop2Y1 = height*192/200;
+loop2X2 = width*128/400;
+loop2Y2 = height*193/200;
+loop2X3 = width*130/400;
+loop2Y3 = height*193/200;
 }

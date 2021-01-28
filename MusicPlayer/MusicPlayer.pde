@@ -16,29 +16,45 @@ AudioPlayer[] song = new AudioPlayer[4]; //creates "Play List" cariable holding 
 AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs];
 int loopIntNum = 1;
 int currentSong = numberOfSongs - numberOfSongs;
+//Skip 1 second
 float fTriangleX1, fTriangleY1, fTriangleX2, fTriangleY2, fTriangleX3, fTriangleY3;
 float fBoxX, fBoxY, fBoxWidth, fBoxHeight;
 float fRectX, fRectY, fRectWidth, fRectHeight;
+//Go back 1 second
 float bTriangleX1, bTriangleY1, bTriangleX2, bTriangleY2, bTriangleX3, bTriangleY3;
 float bBoxX, bBoxY, bBoxWidth, bBoxHeight;
 float bRectX, bRectY;
+//Play song
 int playX1, playY1, playX2, playY2, playX3, playY3;
 float playBoxX, playBoxY, Diameter, playBoxWidth, playBoxHeight;
+//Pause song
 float pauseX, pauseY, pauseWidth, pauseHeight;
 float pause2X, pause2Y;
 float pauseBoxX, pauseBoxY, pauseBoxWidth, pauseBoxHeight;
+//Next song
 float nextSongX1, nextSongY1, nextSongX2, nextSongY2, nextSongX3, nextSongY3;
 float nextSong2X1, nextSong2Y1, nextSong2X2, nextSong2Y2, nextSong2X3, nextSong2Y3;
 float nextSongBoxX, nextSongBoxY, nextSongBoxWidth, nextSongBoxHeight;
+//Song before
 float backSongX1, backSongY1, backSongX2, backSongY2, backSongX3, backSongY3;
 float backSong2X1, backSong2Y1, backSong2X2, backSong2Y2, backSong2X3, backSong2Y3;
 float backSongBoxX, backSongBoxY, backSongBoxWidth, backSongBoxHeight;
+//Exit program
 float quitX, quitY, quitWidth, quitHeight;
 float bottomPanelX, bottomPanelY, bottomPanelWidth, bottomPanelHeight;
+//Loop button
+float loopX, loopY, loopDiameter;
+float loopBoxX, loopBoxY, loopBoxWidth, loopBoxHeight;
+float loopX1, loopY1, loopX2, loopY2, loopX3, loopY3; 
+float loop2X1, loop2Y1, loop2X2, loop2Y2, loop2X3, loop2Y3;
 //Progress Bar
 float barStartX, barEndX, barY;
 int position;
 int TimeStamp = 0;
+//Backround image
+PImage pic;
+float imageStartWidth, imageStartHeight, imageWidth, imageHeight;
+float imageWidthRatio, imageHeightRatio;
 color black = #000000, white = #FFFFFF, red = #F52525;
 
 void setup() {
@@ -80,7 +96,17 @@ void setup() {
     
     frameRate(60);
   }
-  //
+  //background image
+  pic = loadImage("Fireplace.png");
+  imageWidthRatio = 1920.0/1920.0;
+  imageHeightRatio = 1080.0/1920.0;
+  imageStartWidth = width*0;
+  imageStartHeight = height*0;
+  imageWidth = width*imageWidthRatio;
+  imageHeight = width*imageHeightRatio;
+  if ( imageWidth > width ) println("crap");
+  if (imageHeight > height) println("poop");
+  image(pic, imageStartWidth, imageStartHeight, imageWidth, imageHeight);
 }
 
 void draw() {
@@ -226,12 +252,14 @@ void mousePressed() {
     }
     }
   }
+  //Quit Button
   if (mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitWidth) {
    exit (); 
   }
 }
 
 void mouseReleased() {
+  //Progress bar
   if (mouseX >= barStartX && mouseX <= barEndX && mouseY >= barY && mouseY <= barY+5) {
     position = int( map(mouseX, barStartX, barEndX, 0, song[currentSong].length() ) );
     song[currentSong].cue(position);
